@@ -1,0 +1,12 @@
+<div class="wrapper">
+    <div><button>Home</button></div>
+    <div *ngIf="user == false" class="section">
+        <div><button>Login</button></div>
+        <div><button>Register</button></div>
+    </div>
+    <div *ngIf="user == true" class="section">
+        <div><button>Logout</button></div>
+        <div><button>Add post</button></div>
+        <div><button>View posts</button></div>
+    </div>
+</div>
