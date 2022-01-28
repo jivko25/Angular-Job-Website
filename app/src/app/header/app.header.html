@@ -1,13 +1,13 @@
 <div class="wrapper">
     <div><button>Home</button></div>
     <div *ngIf="user == false" class="section">
-        <div><button href="/user">Login User</button></div>
-        <div><button><a href="/user">Register User</a></button></div>
-        <div><button><a href="/user">Login Company</a></button></div>
-        <div><button><a href="/user">Register Company</a></button></div>
+        <div><button><a href="/user-login">Login User</a></button></div>
+        <div><button><a href="/user-register">Register User</a></button></div>
+        <div><button><a href="/company-login">Login Company</a></button></div>
+        <div><button><a href="/company-register">Register Company</a></button></div>
     </div>
     <div *ngIf="user == true" class="section">
-        <div><button><a href="/user">Logout</a></button></div>
+        <div><button><a (click)="logout()">Logout</a></button></div>
         <div><button><a href="/user">Add Post</a></button></div>
         <div><button><a href="/user">View posts</a></button></div>
     </div>

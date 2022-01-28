@@ -7,9 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class AppHeader {
   @Input() user:boolean | undefined;
-  getData(data:string){
-    console.log(data);
-    
-    
+  logout(){
+    localStorage.clear()
+    this.user = false;
   }
 }

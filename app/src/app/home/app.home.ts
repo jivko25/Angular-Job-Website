@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app.home.css']
 })
 export class AppHome {
-  user = localStorage.getItem('user') !== undefined;
+  user = localStorage.getItem('user') !== null;
   
 }
