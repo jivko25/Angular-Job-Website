@@ -1,0 +1,7 @@
+<div class="wrapper">
+    <div class="register-wrapper">
+        <input type="text" #username name="username" placeholder="Username">
+        <input type="password" #password name="password" placeholder="Password">
+        <button (click)="login(username.value, password.value)">Login</button>
+    </div>
+</div>
