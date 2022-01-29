@@ -1,0 +1,18 @@
+<div class="wrapper" *ngIf="isShow == true">
+    <div class="settings-wrapper">
+        <div class="section">
+            <input type="text" #name name="name" placeholder="Name">
+            <button (click)="changeName(name.value)">Change Name</button>
+        </div>
+        <div class="section">
+            <input type="text" #email name="email" placeholder="Email">
+            <button (click)="changeEmail(email.value)">Change Email</button>
+        </div>
+        <div class="section">
+            <button (click)="changePassword()">Reset password</button>
+        </div>
+    </div>
+    <div>
+
+    </div>
+</div>

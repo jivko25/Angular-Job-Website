@@ -10,5 +10,7 @@
         <div><button><a (click)="logout()">Logout</a></button></div>
         <div><button><a href="/user">Add Post</a></button></div>
         <div><button><a href="/user">View posts</a></button></div>
+        <div><button (click)="openSettings()">Settings</button></div>
     </div>
 </div>
+<app-settings-modal [isShow]=isShownSettings [hide]="hideSettings"></app-settings-modal>

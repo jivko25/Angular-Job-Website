@@ -7,8 +7,17 @@ import { Component, Input } from '@angular/core';
 })
 export class AppHeader {
   @Input() user:boolean | undefined;
+  isShownSettings = false;
   logout(){
     localStorage.clear()
     this.user = false;
+  }
+  openSettings(){
+    this.isShownSettings = true;
+  }
+  hideSettings = () : void => {
+    this.isShownSettings = false;
+    console.log('test');
+    
   }
 }

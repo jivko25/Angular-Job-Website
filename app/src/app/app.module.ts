@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import {AppHeader} from './header/app.header';
 import { AppHome } from './home/app.home';
 import { HttpClientModule } from '@angular/common/http';
+import { AppSettings } from './settings-modal/app.settings-modal';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppHome,
     AppHeader,
+    AppSettings,
     routingComponents
   ],
   imports: [
