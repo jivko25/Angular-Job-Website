@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class AppHeader {
   @Input() user:boolean | undefined;
   isShownSettings = false;
+  isShownAddPost = false;
   logout(){
     localStorage.clear()
     this.user = false;
@@ -17,7 +18,11 @@ export class AppHeader {
   }
   hideSettings = () : void => {
     this.isShownSettings = false;
-    console.log('test');
-    
+  }
+  openAdd(){
+    this.isShownAddPost = true;
+  }
+  hideAdd = () : void => {
+    this.isShownAddPost = false;
   }
 }

@@ -8,9 +8,10 @@
     </div>
     <div *ngIf="user == true" class="section">
         <div><button><a (click)="logout()">Logout</a></button></div>
-        <div><button><a href="/user">Add Post</a></button></div>
+        <div><button (click)="openAdd()">Add Post</button></div>
         <div><button><a href="/user">View posts</a></button></div>
         <div><button (click)="openSettings()">Settings</button></div>
     </div>
 </div>
 <app-settings-modal [isShow]=isShownSettings [hide]="hideSettings"></app-settings-modal>
+<app-add-post-modal [isShow]=isShownAddPost [hide]="hideAdd"></app-add-post-modal>

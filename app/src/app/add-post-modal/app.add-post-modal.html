@@ -1,0 +1,32 @@
+<div class="wrapper" *ngIf="isShow == true">
+    <div class="settings-wrapper">
+        <div class="section">
+            <input type="text" #title name="title" placeholder="Title">
+        </div>
+        <div class="section">
+            <textarea #description name="description" placeholder="Description"></textarea>
+        </div>
+        <div class="section">
+            <select name="type" #type>
+                <option value="part-time">Part-time</option>
+                <option value="full-time">Full-time</option>
+                <option value="remote">Remote</option>
+            </select>
+        </div>
+        <div class="section">
+            <select name="category" #category>
+                <option value="office administration">Office administration</option>
+                <option value="development">Development</option>
+                <option value="humanity resources">Humanity Resources</option>
+                <option value="quality assurance">Quality assurance</option>
+                <option value="project management">Project management</option>
+            </select>
+        </div>
+        <div class="section">
+            <button (click)="add(title.value, description.value, type.value, category.value)">Reset password</button>
+        </div>
+    </div>
+    <div>
+
+    </div>
+</div>
