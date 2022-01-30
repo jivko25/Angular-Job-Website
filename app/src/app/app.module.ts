@@ -8,6 +8,7 @@ import { AppHome } from './home/app.home';
 import { HttpClientModule } from '@angular/common/http';
 import { AppSettings } from './settings-modal/app.settings-modal';
 import { AppAddPost } from './add-post-modal/app.add-post-modal';
+import { AppPost } from './post/app.post';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AppAddPost } from './add-post-modal/app.add-post-modal';
     AppHeader,
     AppSettings,
     AppAddPost,
+    AppPost,
     routingComponents
   ],
   imports: [

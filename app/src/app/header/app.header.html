@@ -15,3 +15,5 @@
 </div>
 <app-settings-modal [isShow]=isShownSettings [hide]="hideSettings"></app-settings-modal>
 <app-add-post-modal [isShow]=isShownAddPost [hide]="hideAdd"></app-add-post-modal>
+<app-post *ngFor="let post of posts" [title]='post.title' [likes]='post.likes' [description]='post.description' [company]='post.company' [type]='post.type' [category]='post.category'></app-post>
+

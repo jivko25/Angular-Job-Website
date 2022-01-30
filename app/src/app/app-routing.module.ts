@@ -7,7 +7,7 @@ import { AppCompanyLogin } from './company-login/app.company-login';
 import { AppCompanyRegister } from './company-register/app.company-register';
 
 const routes: Routes = [
-  {path: 'home', component: AppHome},
+  {path: '', component: AppHome},
   {path: 'user-register', component: AppUserRegister},
   {path: 'user-login', component: AppUserLogin},
   {path: 'company-register', component: AppCompanyRegister},

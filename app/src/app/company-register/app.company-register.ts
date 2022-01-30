@@ -15,9 +15,10 @@ export class AppCompanyRegister {
     this.http.post<any>('https://parseapi.back4app.com/users', body, { headers : headers }).subscribe(data => {
       data.username = username;
       data.email = email;
+      data.type = 'company'
       
       localStorage.setItem('user', JSON.stringify(data))
-      this.router.navigate(['home'])
+      this.router.navigate([''])
     });
   }
 }

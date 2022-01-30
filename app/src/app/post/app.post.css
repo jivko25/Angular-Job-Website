@@ -1,0 +1,53 @@
+.wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(171, 226, 171);
+    max-width: 70vw;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 2rem;
+    border: 5px solid green;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.actions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+input, textarea, select{
+    min-height: 30px;
+    font-size: 20px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+button{
+    border: 0;
+    border-radius: 1rem;
+    padding: 16px 32px;
+    color: white;
+    background-color: rgb(82, 82, 228);
+}
+
+button:disabled, button[disabled], button[disabled]:hover{
+    border: 0;
+    border-radius: 1rem;
+    padding: 16px 32px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(103, 103, 103);
+    cursor: not-allowed;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: rgb(2, 57, 2);
+}

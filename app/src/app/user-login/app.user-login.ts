@@ -15,9 +15,10 @@ export class AppUserLogin {
     this.http.post<any>('https://parseapi.back4app.com/login', body, { headers : headers }).subscribe(data => {
       data.username = username;
       // data.email = email;
+      data.type = 'user'
       
       localStorage.setItem('user', JSON.stringify(data))
-      this.router.navigate(['home'])
+      this.router.navigate([''])
     });
   }
 }
