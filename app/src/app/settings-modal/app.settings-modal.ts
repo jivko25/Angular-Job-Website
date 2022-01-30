@@ -42,7 +42,6 @@ export class AppSettings {
     this.http.put<any>(`https://parseapi.back4app.com/users/${userId}`, body, { headers : headers }).subscribe(newData => {
       this.hide();
     });
-
   }
   changePassword(){
     const data = JSON.parse(JSON.stringify(localStorage.getItem('user')))

@@ -4,14 +4,24 @@
         <p>Description: {{description}}</p>
         <h5>Type: {{type}}</h5>
         <h5>Category: {{category}}</h5>
+        <h5>Likes: {{likes.length}}</h5>
     </div>
     <div class="section">
         <h3>Company : {{company}}</h3>
     </div>
     <div class="actions">
-        <button *ngIf="currentUser !== company && !isCompany" [disabled]="isLiked">Like</button>
-        <button *ngIf="currentUser !== company && !isCompany" style="background-color: green">Apply</button>
+        <button *ngIf="currentUser !== company && !isCompany" [disabled]="isLiked" (click)="like()">Like</button>
+        <button *ngIf="currentUser !== company && !isCompany" [disabled]="isApplied || isHired" (click)="apply()">Apply</button>
+        <button *ngIf="currentUser == company" [disabled]="isHired" (click)="showApps()">Applications</button>
         <button *ngIf="currentUser == company" style="background-color: rgb(255, 217, 0);">Edit</button>
         <button *ngIf="currentUser == company" style="background-color: rgb(255, 0, 0);">Delete</button>
     </div>
+</div>
+<div *ngIf="showApplications == true" class="applications">
+    <h3 class="modal-title">Applications for {{title}}</h3>
+    <div *ngFor="let app of applications" class="application">
+        <h5>{{app}}</h5>
+        <button (click)="hire(app)">Hire</button>
+    </div>
+    <button (click)="hideApps()">Close</button>
 </div>
