@@ -23,6 +23,7 @@ export class AppPost {
   isApplied = false;
   isHired = false;
   showApplications = false;
+  isShowEdit = false;
   constructor(private http: HttpClient, private router: Router) { }
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -113,5 +114,34 @@ export class AppPost {
     this.http.put<any>(`https://parseapi.back4app.com/classes/Post/${this.id}`, body, { headers : headers }).subscribe(newData => {
     });
     this.hideApps();
+  }
+
+  showEdit(){
+    this.isShowEdit = true;
+  }
+
+  hideEdit(){
+    this.isShowEdit = false;
+  }
+
+  edit(title : string, description : string, type : string, category : string){
+    const data = JSON.parse(JSON.stringify(localStorage.getItem('user')))
+    const token = JSON.parse(data).sessionToken;
+
+    this.title = title;
+    this.description = description;
+    this.type = type;
+    this.category = category
+
+    const headers = { 
+      'X-Parse-Application-Id': '3cLdch7H4CJ4jp7boKabPSTEmmUmB2d7RqEx7a0x', 
+      'X-Parse-REST-API-Key': 'UnO20LgpL4F0uS1Ahjpkuv7jxsol72xo3exjkP04', 
+      'X-Parse-Revocable-Session' : '1', 
+      'Content-Type' : 'application/json',
+      'X-Parse-Session-Token' : token };
+    const body = {'title' : title, 'description' : description, 'type' : type, 'category' : category}
+    this.http.put<any>(`https://parseapi.back4app.com/classes/Post/${this.id}`, body, { headers : headers }).subscribe(newData => {
+    });
+    this.hideEdit()
   }
 }

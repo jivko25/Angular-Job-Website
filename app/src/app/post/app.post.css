@@ -77,3 +77,20 @@ button:hover{
     display: flex;
     justify-content: space-around;
 }
+
+.edit-wrapper{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    max-height: 500px;
+    width: 100%;
+    background-color: white;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid green;
+    padding: 30px;
+    gap: 20px;
+}

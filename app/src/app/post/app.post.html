@@ -13,7 +13,7 @@
         <button *ngIf="currentUser !== company && !isCompany" [disabled]="isLiked" (click)="like()">Like</button>
         <button *ngIf="currentUser !== company && !isCompany" [disabled]="isApplied || isHired" (click)="apply()">Apply</button>
         <button *ngIf="currentUser == company" [disabled]="isHired" (click)="showApps()">Applications</button>
-        <button *ngIf="currentUser == company" style="background-color: rgb(255, 217, 0);">Edit</button>
+        <button *ngIf="currentUser == company" style="background-color: rgb(255, 217, 0);" (click)="showEdit()">Edit</button>
         <button *ngIf="currentUser == company" style="background-color: rgb(255, 0, 0);">Delete</button>
     </div>
 </div>
@@ -24,4 +24,23 @@
         <button (click)="hire(app)">Hire</button>
     </div>
     <button (click)="hideApps()">Close</button>
+</div>
+<div class="edit-wrapper" *ngIf="isShowEdit">
+        <input type="text" #titleValue name="title" [value]=title>
+        <textarea #descriptionValue name="description" placeholder="Description" [value]=description></textarea>
+        <select name="type" #typeValue [value]=type>
+            <option value="part-time">Part-time</option>
+            <option value="full-time">Full-time</option>
+            <option value="remote">Remote</option>
+        </select>
+        <select name="category" #categoryValue [value]=category>
+            <option value="office administration">Office administration</option>
+            <option value="development">Development</option>
+            <option value="humanity resources">Humanity Resources</option>
+            <option value="quality assurance">Quality assurance</option>
+            <option value="project management">Project management</option>
+        </select>
+        <div class="section">
+            <button (click)="edit(titleValue.value, descriptionValue.value, typeValue.value, categoryValue.value)">Edit</button>
+        </div>
 </div>
