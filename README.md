@@ -1,6 +1,6 @@
 # Demo
 
-*https://angular-job-website.vercel.app/
+* https://angular-job-website.vercel.app/
 
 # Technologies:
 
