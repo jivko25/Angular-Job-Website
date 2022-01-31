@@ -10,10 +10,17 @@ export class AppHeader {
   constructor(private http: HttpClient) { }
   @Input() user:boolean | undefined;
   posts : any;
+  applications = [];
   isShownSettings = false;
   isShownAddPost = false;
+  isShownApplications = false;
+  isCompany = false;
   ngOnInit(): void {
     this.getData()
+    this.isCompany = JSON.parse(JSON.stringify(localStorage.getItem('user'))).type == 'company';
+    this.applications = JSON.parse(JSON.parse(JSON.stringify(localStorage.getItem('user')))).applications;
+    console.log(this.applications);
+    
   };
   getData(){
     const headers = { 
@@ -22,8 +29,6 @@ export class AppHeader {
       'X-Parse-Revocable-Session' : '1', 
       'Content-Type' : 'application/json'};
       const posts = this.http.get<any>(`https://parseapi.back4app.com/classes/Post`, { headers : headers }).subscribe(newData => {
-        console.log(newData.results);
-        
         this.posts = newData.results;
       })}
   
@@ -31,17 +36,26 @@ export class AppHeader {
     localStorage.clear()
     this.user = false;
   }
+
   openSettings(){
     this.isShownSettings = true;
   }
   hideSettings = () : void => {
     this.isShownSettings = false;
   }
+
   openAdd(){
     this.isShownAddPost = true;
   }
   hideAdd = () : void => {
     this.isShownAddPost = false;
     this.getData()
+  }
+
+  openApp(){
+    this.isShownApplications = true;
+  }
+  hideApp(){
+    this.isShownApplications = false;
   }
 }

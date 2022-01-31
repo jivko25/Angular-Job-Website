@@ -8,7 +8,8 @@
     </div>
     <div *ngIf="user == true" class="section">
         <div><button><a (click)="logout()">Logout</a></button></div>
-        <div><button (click)="openAdd()">Add Post</button></div>
+        <div *ngIf="isCompany"><button (click)="openAdd()">Add Post</button></div>
+        <div *ngIf="!isCompany"><button (click)="openApp()">My applications</button></div>
         <div><button><a href="/">View posts</a></button></div>
         <div><button (click)="openSettings()">Settings</button></div>
     </div>
@@ -17,3 +18,10 @@
 <app-add-post-modal [isShow]=isShownAddPost [hide]="hideAdd"></app-add-post-modal>
 <app-post *ngFor="let post of posts" [id]='post.objectId' [title]='post.title' [applications]='post.applications' [hired]='post.hired' [likes]='post.likes' [description]='post.description' [company]='post.company' [type]='post.type' [category]='post.category'></app-post>
 
+<div *ngIf="isShownApplications == true" class="applications">
+    <h1 class="modal-title">My Applications</h1>
+    <div *ngFor="let app of applications" class="application">
+        <h3>{{app['company']}} - {{app['title']}}</h3>
+    </div>
+    <button (click)="hideApp()">Close</button>
+</div>
