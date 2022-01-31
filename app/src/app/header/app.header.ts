@@ -17,7 +17,7 @@ export class AppHeader {
   isCompany = false;
   ngOnInit(): void {
     this.getData()
-    this.isCompany = JSON.parse(JSON.stringify(localStorage.getItem('user'))).type == 'company';
+    this.isCompany = JSON.parse(JSON.parse(JSON.stringify(localStorage.getItem('user')))).type == 'company';
     this.applications = JSON.parse(JSON.parse(JSON.stringify(localStorage.getItem('user')))).applications;
     console.log(this.applications);
     

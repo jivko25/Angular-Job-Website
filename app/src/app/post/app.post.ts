@@ -74,6 +74,8 @@ export class AppPost {
     const user = JSON.parse(data).username;
     const userId = JSON.parse(data).objectId;
     const apps = JSON.parse(data).applications
+    console.log(this.applications);
+    
     this.applications.push(user);
     apps.push({
       'company' : this.company,
@@ -159,5 +161,6 @@ export class AppPost {
     this.http.delete<any>(`https://parseapi.back4app.com/classes/Post/${this.id}`, { headers : headers }).subscribe(newData => {
     });
     this.hideEdit()
+    this.router.navigate([''])
   }
 }

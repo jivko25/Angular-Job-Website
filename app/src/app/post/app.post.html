@@ -13,7 +13,7 @@
         <button *ngIf="currentUser !== company && !isCompany" [disabled]="isLiked" (click)="like()">Like</button>
         <button *ngIf="currentUser !== company && !isCompany" [disabled]="isApplied || isHired" (click)="apply()">Apply</button>
         <button *ngIf="currentUser == company" [disabled]="isHired" (click)="showApps()">Applications</button>
-        <button *ngIf="currentUser == company" style="background-color: rgb(255, 217, 0);" (click)="showEdit()">Edit</button>
+        <button *ngIf="currentUser == company" (click)="showEdit()" [disabled]="isHired">Edit</button>
         <button *ngIf="currentUser == company" style="background-color: rgb(255, 0, 0);" (click)="delete()">Delete</button>
     </div>
 </div>

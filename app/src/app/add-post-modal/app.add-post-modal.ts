@@ -22,7 +22,7 @@ export class AppAddPost {
       'X-Parse-Revocable-Session' : '1', 
       'Content-Type' : 'application/json',
       'X-Parse-Session-Token' : token };
-    const body = {'title' : title, 'description' : description, 'type' : type, 'category' : category, 'likes' : [], 'company' : JSON.parse(data).username}
+    const body = {'title' : title, 'description' : description, 'type' : type, 'category' : category, 'likes' : [], 'company' : JSON.parse(data).username, 'applications' : []}
     this.http.post<any>(`https://parseapi.back4app.com/classes/Post`, body, { headers : headers }).subscribe(newData => {
       console.log(newData);
       this.hide();
