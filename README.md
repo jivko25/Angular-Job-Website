@@ -1,3 +1,9 @@
+# Technologies:
+
+* Angular
+* TypeScript
+* Back4app
+
 # App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
@@ -25,3 +31,20 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## How to use app
+
+* First you need to register, useing username, email and password
+* You can change username from "Settings"
+* If you want to change password, you can use Reset password from Settings
+* There are two types of registration:
+  * Company
+  - Can add posts
+  - Can view all applicatiopns
+  - Can approve candidates 
+  - Can view other posts
+  * User
+  - Can apply on job offer
+  - Can view their appliations
+  - Can view all posts
+
