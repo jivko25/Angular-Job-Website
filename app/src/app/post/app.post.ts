@@ -17,6 +17,7 @@ export class AppPost {
   @Input() hired:string | any
   @Input() likes: Array<string> | any
   @Input() applications : Array<string> | any
+  @Input() onDelete : ((args: any) => void) | any;
   currentUser = JSON.parse(JSON.parse(JSON.stringify(localStorage.getItem('user')))).username;
   isCompany = JSON.parse(JSON.parse(JSON.stringify(localStorage.getItem('user')))).type == 'company';
   isLiked = false;
@@ -141,6 +142,21 @@ export class AppPost {
       'X-Parse-Session-Token' : token };
     const body = {'title' : title, 'description' : description, 'type' : type, 'category' : category}
     this.http.put<any>(`https://parseapi.back4app.com/classes/Post/${this.id}`, body, { headers : headers }).subscribe(newData => {
+    });
+    this.hideEdit()
+  }
+
+  delete(){
+    const data = JSON.parse(JSON.stringify(localStorage.getItem('user')))
+    const token = JSON.parse(data).sessionToken;
+
+    const headers = { 
+      'X-Parse-Application-Id': '3cLdch7H4CJ4jp7boKabPSTEmmUmB2d7RqEx7a0x', 
+      'X-Parse-REST-API-Key': 'UnO20LgpL4F0uS1Ahjpkuv7jxsol72xo3exjkP04', 
+      'X-Parse-Revocable-Session' : '1', 
+      'Content-Type' : 'application/json',
+      'X-Parse-Session-Token' : token };
+    this.http.delete<any>(`https://parseapi.back4app.com/classes/Post/${this.id}`, { headers : headers }).subscribe(newData => {
     });
     this.hideEdit()
   }
