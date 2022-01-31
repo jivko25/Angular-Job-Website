@@ -39,12 +39,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 * If you want to change password, you can use Reset password from Settings
 * There are two types of registration:
   * Company
-  - Can add posts
-  - Can view all applicatiopns
-  - Can approve candidates 
-  - Can view other posts
+    - Can add posts
+    - Can view all applicatiopns
+    - Can approve candidates 
+    - Can view other posts
   * User
-  - Can apply on job offer
-  - Can view their appliations
-  - Can view all posts
+    - Can apply on job offer
+    - Can view their appliations
+    - Can view all posts
 
