@@ -17,7 +17,7 @@ export class AppUserRegister {
       data.email = email;
       data.type = 'user'
       
-      localStorage.setItem('user', JSON.stringify(data))
+      // localStorage.setItem('user', JSON.stringify(data))
       this.router.navigate([''])
     });
   }
